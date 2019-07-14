@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://emagtechlabs.github.io/emag-apps-ui-kit/dist/css/main_style.min.css"
+    />
+    <style>
+      .app-card {
+        position: relative;
+      }
+
+      .app-card:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      .app-card-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .app-card-content h2 {
+        line-height: 1.35em;
+      }
+
+      .col-mt {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light navbar-expand-md bg-white fixed-top">
+      <a class="navbar-brand" href="./index.html">
+        <img
+          alt="eMAG"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOTkiIGhlaWdodD0iODAiPjxwYXRoIGZpbGw9IiMwMDVlYjgiIGQ9Ik0xOTQuOTUgMzEuMzNsLTYuOSAxOC41N2gxMy45ek00MC42NSAxOS45bC0yLjIuMTctMS45OC4zNy0xLjgyLjczLTEuNjMgMS4xLTEuNTQgMS4zNy0xLjU0IDEuOTItMS4zNiAyLjItMSAyLjQ3LS43MyAyLjgzaDI3LjY3bC0uNTQtMi44My0xLTIuNDctMS4xOC0yLjItMS42My0xLjkyLTEuNTUtMS4zNy0xLjcyLTEuMS0xLjktLjczLTIuMS0uMzd6TTQwLjQ0LjEybDQuMS4xOCAzLjguMzggMy42My43MyAzLjM2LjkyIDMuMTcgMS4yIDMuNjQgMS44MiAzLjM2IDIuMSAzIDIuNDggMi42MiAyLjY1IDIuMzYgMy4xIDIuMSAzLjNWMS43OGgyNi40bDE2LjMgMjYuOSAxNi4yNS0yNi45aDI2LjR2NTEuN0wxODIuNiAxLjMyaDI1LjE0bDE1LjI0IDM2Ljc4LjM2LTMuNjYuNjQtMy41Ny45LTMuNCAxLjItMy4yOCAxLjctMy41IDIuMS0zLjI4IDIuMzUtMy4wMiAyLjYzLTIuODQgMy0yLjU2IDMuMTctMi4yIDMuMzYtMiAzLjctMS42NSA0LTEuMjggNC4wOC0uOTIgNC4xOC0uNTUgNC40NC0uMTggNC44LjE4IDQuNTQuNTUgNC4yNyAxIDQuMSAxLjMgMy44IDEuNjQgMy42MyAyIDMuNDUgMi4yOCAzLjE3IDIuNTctMTQuMjQgMTcuMy0yLjUzLTEuOTMtMi42My0xLjY1LTIuNzItMS4zNy0yLjgyLTEtMy0uNTYtMy4wNy0uMTgtMi4zNi4xOC0yLjI3LjQ2LTIuMTguNzMtMiAxLTEuOCAxLjMtMS42NCAxLjQ1LTEuNDUgMS43NC0xLjE4IDEuODMtLjkgMi4xLS42NCAyLjMtLjQ1IDIuMzctLjEgMi41N3YuMjZsLjIgMi41Ni40NSAyLjQ3LjcyIDIuMzcgMSAyLjEgMS4xOCAxLjkzIDEuNTQgMS43NCAxLjYzIDEuNDYgMS45IDEuMjggMi4xIDEgMi4zNi43NCAyLjQ1LjM2IDIuNTQuMiAyLS4xIDEuNzItLjEgMS40NS0uMjcgMS45LS41NCAxLjYzLS43M3YtNy43aC0xMy4wN1YzMy4xN0gyOTl2MzUuM2wtMy4xNyAyLjQ4LTMuNTQgMi4yLTMuODIgMS45Mi00LjA4IDEuNzQtNC4zNiAxLjM3LTQuNTMgMS00LjkuNjUtNS4wNy4xOC00LjM2LS4xOC00LjE3LS41NS00LjA4LS45LTQtMS4zLTMuNTMtMS40Ni0zLjI4LTEuNjQtMy4wOC0yLTIuOS0yLjMgMy41MyA4LjdIMjEyLjJsLTQtMTAuMzVoLTI2LjZsLTMuOSAxMC4zNmgtNDJWNDAuNGwtMTcuNSAyNy4yNWgtLjQ1bC0xNy41LTI3LjI2djM3Ljk2SDc1LjU2di0yOS4xaC00Ny44bDEgMi4zIDEuMjYgMiAxLjQ1IDEuNzQgMS44IDEuNDYgMi4zNyAxLjM3IDIuNzIgMSAzIC41NiAzLjE3LjE3IDMuMjctLjE4IDMuMS0uNjUgMi45LTEgMi4zNS0xLjIgMi4zNi0xLjU1IDEyLjcgMTUuNDYtMy43IDIuNTYtMy45IDIuMy0zLjU0IDEuNTUtMy44MiAxLjItNC4xNy44LTQuMzUuNDYtNC43Mi4yLTQuNjMtLjItNC40NC0uNTQtNC4yNy0uODQtNC0xLjI4LTMuOC0xLjU1LTMuNTMtMS45Mi0zLjI3LTIuMS0zLTIuNDctMi43Mi0yLjY1TDcgNjMuMjZsLTItMy4zLTEuODMtMy40Ny0xLjM1LTMuNzYtMS0zLjk0LS42NC00LjEyLS4xOC00LjR2LS4yNmwuMTgtNC4xMi41NC0zLjkzIDEtMy44NEwzIDI0LjQ2IDQuNjIgMjFsMS45LTMuMyAyLjI3LTMuMTIgMi41NC0yLjgzIDIuOC0yLjU3IDMuMS0yLjI4IDMuMzUtMS45MiAzLjYyLTEuNzQgMy44LTEuMzcgMy45LTEgNC4yLS41NnoiLz48cGF0aCBmaWxsPSIjZWQxYzI0IiBkPSJNNDAuNjQgMTkuOWwtMi4xOC4xNy0yIC4zNy0xLjguNzMtMS42NCAxLjEtMS41NCAxLjM3LTEuNTQgMS45Mi0xLjM2IDIuMi0xIDIuNDctLjczIDIuODNoMjcuNjdsLS41NC0yLjgzLTEtMi40Ny0xLjE4LTIuMi0xLjYzLTEuOTItMS41NS0xLjM3LTEuNzItMS4xLTEuOS0uNzMtMi4xLS4zN3pNNDAuNDYuMTJsNC4wOC4xOCAzLjguMzhMNTIgMS40bDMuMzYuOTIgMy4xNyAxLjIgMy42NCAxLjgyIDMuMzYgMi4xIDMgMi40OCAyLjYyIDIuNjUgMi4zNiAzLjEgMi4xIDMuM1YyLjMzbDMuMDcgMy4xIDIuNjMgMy41IDIuMjcgMy43NCAxLjggNC4xMiAxLjM4IDQuMi44IDQuNS4yOCA0LjY2LS4yNiA0LjY2LS44IDQuNS0xLjM4IDQuMjgtMS44IDQuMDMtMi4yOCAzLjc2LTIuNjMgMy41Ny0zLjA4IDMuMXYtOC43N2gtNDcuOGwxIDIuMyAxLjI2IDIgMS40NSAxLjc0IDEuOCAxLjQ2IDIuMzcgMS4zNyAyLjcyIDEgMyAuNTYgMy4xNy4xNyAzLjI3LS4xOCAzLjEtLjY1IDIuOS0xIDIuMzUtMS4yIDIuMzYtMS41NSA3LjU0IDkuMTUtMy44IDEuNTUtNCAxLjItNC4xNy42My00LjI3LjI4LTQuNDQtLjI3LTQuMjYtLjczLTQuMS0xLjItMy45LTEuNjMtMy42Mi0yLjEtMy4zNS0yLjQtMy4xOC0yLjgzLTIuNzItMy4xLTIuNDUtMy40LTIuMS0zLjY1LTEuNjItMy44NS0xLjE4LTQuMTItLjcyLTQuMy0uMjgtNC40LjI4LTQuMi42My00LjEyIDEuMDgtMy45MiAxLjU0LTMuNzUgMS45LTMuNTcgMi4yNy0zLjMgMi41My0zLjEgMS0uNDYgMS4xLS40NiAzLjgtMS4zNyAzLjktMUwzNi4xLjN6Ii8+PC9zdmc+"
+        />
+      </a>
+      <h4 class="navbar-text mr-auto">InternalApps</h4>
+    </nav>
+    <div class="main-container container">
+      <div class="main-container-inner">
+        <div class="main-content">
+          <div class="page-content">
+            <div class="card">
+              <div class="card-body">
+                <div class="page-header">
+                  <h1>Apps list</h1>
+                </div>
+                <h3 class="col-mt">Tools</h3>
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">Core</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">eDeploy</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">UI KIT</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">ATF</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">Product Validator</h2>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="col-mt">Info</h3>
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">MOA</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">The map of the building</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">Connect</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">Dashboard logare - for SD & Plat</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">PSP Dashboard</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="w-100 d-none d-xl-block"></div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">Upvote System</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt d-none d-xl-block"
+                  ></div>
+                  <div
+                    class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt d-none d-xl-block"
+                  ></div>
+                  <div
+                    class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt d-none d-xl-block"
+                  ></div>
+                  <div
+                    class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt d-none d-xl-block"
+                  ></div>
+                </div>
+
+                <h3 class="col-mt">Management</h3>
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">UMAD</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt">
+                    <div class="app-card">
+                      <a href="#" class="app-card-content bg-gray-100 px-3">
+                        <h2 class="mb-0">Interfata concedii</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt d-none d-xl-block"
+                  ></div>
+                  <div
+                    class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt d-none d-xl-block"
+                  ></div>
+                  <div
+                    class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl col-mt d-none d-xl-block"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-inner text-center">
+        <div class="footer-content">
+          <span
+            >Copyright © 2011 - 2019 <strong>eMAG</strong>.
+            <br class="d-inline d-md-none" />All rights reserved.</span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
